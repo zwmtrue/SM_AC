@@ -10,7 +10,7 @@ def markov_pi(N, delta):
         if x**2 + y**2 < 1.0: n_hits += 1
     return n_hits
 
-n_runs = 1000
+n_runs = 10
 n_trials = 4000
 delta = 0.1
 for run in range(n_runs):

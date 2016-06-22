@@ -8,11 +8,17 @@ n_trials = 10000
 for k in xrange(n_trials):
     x_new = x + random.uniform(-delta, delta)
     if x_new > 0.0 and x_new < 1.0:
-        if random.uniform(0.0, 1.0) < math.sqrt(x) / math.sqrt(x_new): 
+        if random.uniform(0.0,1.0)< x**2/(x_new**2):
+        #if random.uniform(0.0, 1.0) < math.sqrt(x) / math.sqrt(x_new): 
             x = x_new 
+    #if 1.0 / x**2 > y_max: 
+     #   y_max =  1.0 /x**2        
+
+ 
+     
     if 1.0 / math.sqrt(x) > y_max: 
-         y_max =  1.0 / math.sqrt(x)
-         print y_max, x, k
+        y_max =  1.0 / math.sqrt(x)             
+        print y_max, x, k
     data.append(x)
 
 pylab.hist(data, bins=100, normed='True')
